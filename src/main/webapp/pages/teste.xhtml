@@ -11,15 +11,17 @@
 </h:head>
 <h:body>
 	<h:form>
-		<p:panelGrid columns="2">
-			<p:outputLabel value="Nome" />
-			<p:inputText value="#{agenteMB.agente.nome}" />
-			<p:outputLabel value="Tempo de Serviço" />
-			<p:inputText value="#{agenteMB.agente.tempoServico}" />
-			<p:outputLabel value="Data de Contratação" />
-			<p:inputText value="#{agenteMB.agente.dtContratacao}" />
-		</p:panelGrid>
-		<p:commandButton value="Salvar" action="#{agenteMB.criar()}"/>
+		<p:dataTable value="#{agenteMB.listaAgente}" var="a">
+			<h:column>
+				<p:outputLabel value="#{a.nome}" />
+			</h:column>
+			<h:column>
+				<p:outputLabel value="#{a.tempoServico}" />
+			</h:column>
+			<h:column>
+				<p:outputLabel value="#{a.dtContratacao}" />
+			</h:column>
+		</p:dataTable>
 	</h:form>
 </h:body>
 </html>
